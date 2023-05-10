@@ -4,11 +4,10 @@ Requirements:
 
 ## Ecommerce
 
-- [] Display a list of products that come from a JSON.
-- [] Add a filter by category.
-- [] Add a filter by price.
-
-Make use of useContext to avoid passing unnecessary props.
+- [x] Display a list of products that come from a JSON.
+- [x] Add a filter by category.
+- [x] Add a filter by price.
+- [x] Componetize your application and make use of useContext to avoid passing unnecessary props.
 
 ## Cart:
 
