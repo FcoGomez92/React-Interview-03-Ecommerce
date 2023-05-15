@@ -1,38 +1,19 @@
-import { createContext, useContext, useState, useEffect } from 'react'
-import { products as mockedProducts } from '../mocks/products.json'
+import { createContext, useContext } from 'react'
+import { useFilters } from '../hooks/useFilters'
 
 const FilterContext = createContext(null)
 
 export const FilterContextProvider = ({ children }) => {
-  const [products, setProducts] = useState([])
-  const [filters, setFilters] = useState({
-    category: '',
-    price: Math.max(...mockedProducts.map(p => p.price))
-  })
-
-  useEffect(() => {
-    setProducts(mockedProducts)
-  }, [])
-
-  const changeFilters = (value, filter) => {
-    setFilters(prevSt => {
-      return {
-        ...prevSt,
-        [filter]: value
-      }
-    })
-  }
-
-  const filteredProduct = products.filter(p => {
-    return p.price <= filters.price && (
-      !filters.category || p.category === filters.category
-    )
-  })
-
-  const categories = [...new Set(products.map(p => p.category))]
+  const {
+    initialProducts,
+    filteredProduct,
+    filters,
+    changeFilters,
+    categories
+  } = useFilters()
 
   const values = {
-    initialProducts: products,
+    initialProducts,
     filteredProduct,
     filters,
     changeFilters,

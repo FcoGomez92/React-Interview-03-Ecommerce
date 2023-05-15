@@ -119,8 +119,129 @@ button:focus-visible {
   gap:5px;
 }
 
-.add {
+.cart-cta {
   padding: 5px 8px;
+  border:solid 1px transparent;
+}
+
+.cart-cta.remove {
+  color:red;
+  border:solid 1px red;
+}
+.cart-cta.remove:hover {
+  background-color: #ff090959;
+}
+
+.cart-indicator {
+  position:absolute;
+  bottom:0;
+  right: 0;
+  background:#f25353;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border:solid 2px #242424
+}
+
+.cart-toggle {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding:10px;
+  margin:10px;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+
+.cart-toggle ~ input:checked ~ .cart-container {
+  display: block;
+}
+
+.cart-container {
+  display: none;
+  position:fixed;
+  top:0;
+  right: 0;
+  background-color: #213547;
+  max-height: 100vh;
+  width: 400px;
+  border: solid 1px rgb(73, 73, 73);
+}
+
+.cart-header {
+  padding: 14px 20px;
+  display: flex;
+  gap:20px;
+}
+
+.cart-header button {
+  padding:5px 10px;
+}
+
+.cart-products-container {
+height: calc(100vh - 132px);
+padding:20px;
+border-bottom: solid 1px rgb(73, 73, 73);
+border-top: solid 1px rgb(73, 73, 73);
+}
+
+.cart-products-container p{
+text-align: center;
+}
+
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  max-height: calc(100vh - 100px);
+  overflow: scroll;
+}
+
+.cart-item {
+  display:flex;
+  align-items: center;
+  gap:5px;
+}
+
+.cart-item img{
+  height: 60px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.cart-item strong{
+  max-width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.manage-qty {
+  margin-left:auto;
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+.manage-qty button{
+  padding:0;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sub-total {
+  margin-top:auto;
+  padding:20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (prefers-color-scheme: light) {

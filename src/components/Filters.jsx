@@ -16,6 +16,9 @@ export function Filters () {
 
   return (
     <section className='filters'>
+      <label>Search by title:
+        <input style={{ padding: '0 5px' }} type='text' placeholder='iPhone X, perfume...' value={filters.search} onChange={(e) => changeFilters(e.target.value, 'search')} />
+      </label>
       <label>Category:
         <select value={filters.category} onChange={(e) => { changeFilters(e.target.value, 'category') }}>
           <option defaultValue value=''>Select category</option>
